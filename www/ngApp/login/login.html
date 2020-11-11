@@ -1,0 +1,52 @@
+<div>
+    <div class="container">
+        <br>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-3"><h2>Login</h2></div>
+            <div class="col-md-5"></div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4"></div>
+            <div class="col-lg-5">
+                <form name="loginForm">
+                    <p class="form-group">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <input ng-model="loginCtrl.formObj.email" ng-pattern="/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/" required  name="email" type="text" class="form-control" id="email" placeholder="Please enter your email address">
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                    </p>
+
+                    <p class="form-group">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div ng-show="loginForm.email.$dirty && loginForm.email.$invalid" class="alert alert-danger" role="alert">
+                                    Email address is invalid
+                                </div>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                    </p>
+
+                    <p class="form-group">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <input ng-model="loginCtrl.formObj.password" required  name="password1" type="password" class="form-control" id="password1" placeholder="Please enter your password">
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                    </p>
+
+                    <p>
+                        <input ng-click="loginCtrl.login()" type="button" class="btn btn-success" value="login">
+                    </p>
+                </form>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>

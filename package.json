@@ -1,0 +1,18 @@
+{
+  "name": "project_social_media_platform",
+  "version": "1.0.0",
+  "description": "Angular+Express.js Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Max",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "formidable": "^1.2.2",
+    "mongoose": "^5.10.13"
+  }
+}

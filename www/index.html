@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-controller="MainCtrl as mainCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ mainCtrl.getTitle() }}-MySays</title>
+<!--引入样式表-->
+    <link rel="stylesheet" href="./assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/css.css">
+    <link rel="stylesheet" href="./css/passwordStrengthBar.css">
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+<ui-view></ui-view>
+<script src="assets/requirejs/require.js" data-main="bootstrap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+</html>

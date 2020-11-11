@@ -1,0 +1,94 @@
+<div>
+    <div class="container">
+        <br>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-3"><h2>Register</h2></div>
+            <div class="col-md-5"></div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4"></div>
+            <div class="col-lg-5">
+                <form name="registerForm">
+                    <p class="form-group">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <input required ng-blur="registerCtrl.checkExist()" ng-model="registerCtrl.registerFormObj.email" ng-pattern="/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/" name="email" type="text" class="form-control" id="email" placeholder="Please enter your email address">
+                            </div>
+                            <div class="col-lg-2">
+                                <i class="fas fa-check-double" ng-show="registerCtrl.showPassMark"></i>
+                            </div>
+                        </div>
+                    </p>
+                    <p class="form-group">
+                         <div class="row">
+                             <div class="col-lg-10">
+                                 <div class="alert alert-danger" role="alert" ng-show="(registerForm.email.$dirty && registerForm.email.$invalid) || registerCtrl.showEmailTip">
+                                     {{ registerCtrl.emailTip }}
+                                 </div>
+                             </div>
+                             <div class="col-lg-2"></div>
+                         </div>
+                    </p>
+
+                    <p class="form-group">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <input required ng-model="registerCtrl.registerFormObj.password1"  name="password1" type="password" class="form-control" id="password1" placeholder="Please enter your password">
+                            </div>
+                            <div class="col-lg-2">
+                                <i class="fas fa-check-double" ng-show="registerCtrl.getStrength()>=2"></i>
+                            </div>
+                        </div>
+                    </p>
+
+
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="alert alert-danger" role="alert" ng-show="registerForm.password1.$dirty && registerCtrl.getStrength()<2">
+                                Password is too week.
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <password-strength-bar strength="{{ registerCtrl.getStrength() }}"></password-strength-bar>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+
+                    <p class="form-group">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <input required ng-model="registerCtrl.registerFormObj.password2"  name="password2" type="password" class="form-control" id="password2" placeholder="Please confirm your password">
+                            </div>
+                            <div class="col-lg-2">
+                                <i class="fas fa-check-double" ng-show="registerCtrl.isMatch"></i>
+                            </div>
+                        </div>
+                    </p>
+
+                    <p class="form-group">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="alert alert-danger" role="alert" ng-show="registerForm.password2.$dirty && !registerCtrl.passwordMatch()">
+                                    Password does not match.
+                                </div>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                    </p>
+
+                    <p>
+                        <input ng-click="registerCtrl.doRegister()" type="button" class="btn btn-success" value="register" ng-disabled="registerForm.$invalid || !registerCtrl.passwordMatch()">
+                    </p>
+                </form>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>
