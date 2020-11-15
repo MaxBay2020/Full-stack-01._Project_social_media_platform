@@ -1,0 +1,144 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.bigBox{
+	border: 1px solid gray;
+	position: relative;
+	float:left;
+}
+
+.cut{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 100;
+	overflow: hidden;
+}
+.cut .cutImg{
+	position: absolute;
+	top:0;
+	left:0;
+}
+.cover{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.4;
+	z-index: 50
+}
+.cut .t {
+	height: 0px;
+	width: 1200px;
+	border: 1px dashed yellow;
+	position: absolute;
+	top:0;
+	left:0;
+	animation: movet 20s linear 0s infinite;
+}
+
+@-webkit-keyframes movet{
+	from{
+		left: 0;
+	}
+	to{
+		left: -600px;
+	}
+}
+
+.cut .b {
+	height: 0px;
+	width: 1200px;
+	border: 1px dashed yellow;
+	position: absolute;
+	bottom:0;
+	left:0;
+	animation: moveb 20s linear 0s infinite;
+	margin:0;
+}
+
+@-webkit-keyframes moveb{
+	from{
+		left: -600px;
+	}
+	to{
+		left: 0;
+	}
+}
+
+.cut .l {
+	height: 1200px;
+	width: 0px;
+	border: 1px dashed yellow;
+	position: absolute;
+	top:0;
+	left:0;
+	animation: movel 20s linear 0s infinite;
+}
+
+@-webkit-keyframes movel{
+	from{
+		top: -600px;
+	}
+	to{
+		top: 0;
+	}
+}
+
+.cut .r {
+	height: 1200px;
+	width: 0px;
+	border: 1px dashed yellow;
+	position: absolute;
+	top:0;
+	right:0;
+	animation: mover 20s linear 0s infinite;
+}
+
+@-webkit-keyframes mover{
+	from{
+		top: 0;
+	}
+	to{
+		top: -600px;
+	}
+}
+
+.previewBox{
+	float:left;
+	margin-left: 60px;
+}
+.previewBox .previewLBox{
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	position: relative;
+	border-radius: 50%;
+}
+.previewBox .previewMBox{
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	position: relative;
+	border-radius: 50%;
+}
+.previewBox .previewSBox{
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	position: relative;
+	border-radius: 50%;
+}
+.previewBox img{
+	position:absolute;
+	top:0;
+	left:0;
+}

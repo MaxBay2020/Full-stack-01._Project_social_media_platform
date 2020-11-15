@@ -1,0 +1,77 @@
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <br>
+                <h2>Update profile</h2>
+
+                <ul class="nav nav-tabs">
+                    <li class="{{ profileCtrl.idx === 0? 'active nav-item': 'nav-item ' }}">
+                        <a ng-click="profileCtrl.changeTab(0)" class="{{ profileCtrl.idx===0? 'nav-link active': 'nav-link' }}" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true"> Change profile</a>
+                    </li>
+                    <li class="{{ profileCtrl.idx === 1? 'active nav-item': ' nav-item' }}">
+                        <a ng-click="profileCtrl.changeTab(1)" class="{{ profileCtrl.idx===1? 'nav-link active': 'nav-link' }}" id="profile-tab" data-toggle="tab" role="tab" aria-controls="profile" aria-selected="false">Change password</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div ng-if="profileCtrl.idx===0" class="{{ profileCtrl.idx===0? 'tab-pane fade show active':'tab-pane fade' }}" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                        <form>
+                            <!--Email-->
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input ng-model="profileCtrl.formObj.email" type="email" class="form-control" id="email" aria-describedby="emailHelp" disabled>
+                                <small id="emailTip" class="form-text text-muted">Email address cannot be changed.</small>
+                            </div>
+
+                            <!--nickname-->
+                            <div class="form-group">
+                                <label for="nickname">Nickname</label>
+                                <input ng-model="profileCtrl.formObj.nickname"  type="text" class="form-control" id="nickname" placeholder="nickname">
+                            </div>
+
+                            <!--signature-->
+                            <div class="form-group">
+                                <label for="signature">Signature</label>
+                                <input ng-model="profileCtrl.formObj.signature"  type="text" class="form-control" id="signature" placeholder="signature">
+                            </div>
+
+                            <!--image-->
+                            <div class="form-group">
+                                <label>Pic</label>
+                                <div>
+                                    <img src="{{ profileCtrl.getAvatar() }}" alt="">
+                                </div>
+                                <div>
+                                    <input id="imgUpload" nv-file-select uploader="profileCtrl.uploader" type="file" value="Upload">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success" ng-click="profileCtrl.updateProfile()">Update</button>
+                        </form>
+
+                    </div>
+                    <div ng-if="profileCtrl.idx===1" class="{{ profileCtrl.idx===1? 'tab-pane fade show active':'tab-pane fade' }}" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        tab2
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+<!--切图界面    -->
+    <div class="mask_profile cutBox" ng-if="profileCtrl.showCutBox">
+        <div class="innerBox">
+            <!--关闭按钮制作-->
+            <a href="javascript:" class="mask_close" ng-click="profileCtrl.showCutBox=false;">X</a>
+            <!--自定义的切图指令-->
+            <cut-pic img='{{ profileCtrl.getImgSrc() }}' v='profileCtrl.v' maxwidth='800' maxheight='500'></cut-pic>
+            <button class="btn btn-primary" ng-click="profileCtrl.cut()" id="cutBtn">Cut</button>
+        </div>
+    </div>
+</div>

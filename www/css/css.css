@@ -1,0 +1,84 @@
+.nav-tabs a{
+    cursor: pointer;
+}
+.tab-content{
+    padding:10px 5px;
+}
+.mask_profile{
+    background-color:rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    left: 0;
+    top: 0
+}
+.innerBox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /*width: 750px;*/
+    /*height: 400px;*/
+    background-color: white;
+    transform:translate(-50%, -50%);
+    border-radius:10px;
+    padding:10px;
+}
+.mask_close{
+    position:absolute;
+    top:-10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background-color:white;
+    text-align: center;
+    line-height: 30px;
+    color: black;
+    border-radius:50%;
+}
+.mask_close:hover{
+    text-decoration:none;
+    font-size: 14px;
+}
+#cutBtn{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+.header_avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position:absolute;
+    top: 6px;
+    right: 350px;
+}
+#myContainer{
+    padding-top: 20px;
+}
+.jumbotron{
+    postion: relative;
+}
+.jumbotron h2{
+    padding-left: 65px;
+}
+.jumbotron img{
+    position: absolute;
+    top: 55px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.says_avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.item{
+    border: 1px solid rgba(50,50,50,.2);
+    /*box-shadow: 1px 1px 1px rgba(50,50,50,.2);*/
+    margin: 10px;
+    padding:10px;
+    border-radius: 10px;
+}

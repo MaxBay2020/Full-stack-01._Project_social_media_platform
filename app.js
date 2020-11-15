@@ -24,6 +24,12 @@ app.post    ('/checkExist'      , routers.checkExist)
 app.post    ('/user'            , routers.doRegisterUser)
 app.get     ('/checkLogin'      , routers.checkLogin)
 app.post    ('/login'           , routers.login)
+app.get     ('/profile'         , routers.profile)
+app.post    ('/upload'          , routers.upload)
+app.get     ('/cut'             , routers.cut)
+app.post    ('/updateProfile'          , routers.updateProfile)
+app.post    ('/says'            , routers.releaseSays)
+app.get     ('/says'            , routers.getSays)
 
 app.use((req,res) => {
     return res.send('Sorry, page lost')

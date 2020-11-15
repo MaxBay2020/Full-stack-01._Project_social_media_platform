@@ -3,8 +3,9 @@ define(function (require, exports, module) {
     var asyncLoader = require('angular-async-loader');
 
     require('angular-ui-router');
+    require('angularfileupload')
 
-    var app = angular.module('app', ['ui.router']);
+    var app = angular.module('app', ['ui.router', 'angularFileUpload']);
 
     //定义一个最大的控制器
     app.controller('MainCtrl', ['titleService', function (titleService){

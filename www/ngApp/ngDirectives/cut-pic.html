@@ -1,0 +1,22 @@
+<div>
+	<div class="bigBox">
+		<!-- 测试宽高用 -->
+		<img src="{{ img }}" class="bigImg2" style="display: none">	
+		<img class="bigImg" src="{{ img }}" style="max-width: {{maxwidth}}px;max-height: {{maxheight}}px;">
+
+		<div class="cut">
+			<img class="cutImg" src="{{ img }}" alt="">
+			<p class="t"></p>
+			<p class="r"></p>
+			<p class="b"></p>
+			<p class="l"></p>
+		</div>
+		<div class="cover"></div>
+	</div>
+
+	<div class="previewBox">
+		Large:<div class="previewLBox"><img class="previewL" src="{{ img }}" alt=""></div>
+		Medium:<div class="previewMBox"><img class="previewM" src="{{ img }}" alt=""></div>
+		Small:<div class="previewSBox"><img class="previewS" src="{{ img }}" alt=""></div>
+	</div>
+</div>

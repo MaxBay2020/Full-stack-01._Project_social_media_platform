@@ -5,12 +5,15 @@ define(function(){
         let isLogin = false
         let nickname = ''
         let email = ''
+        let avatar = ''
         return{
             checkLogin: () => {
                 $http.get('/checkLogin').then((data) => {
+                    console.log(data)
                     isLogin = data.data.login
                     nickname=data.data.nickname
                     email=data.data.email
+                    avatar = data.data.avatar
                 })
             },
             getLogin: ()=>{
@@ -21,6 +24,9 @@ define(function(){
             },
             getEmail: ()=>{
                 return email
+            },
+            getAvatar: ()=>{
+                return avatar
             }
         }
     }])

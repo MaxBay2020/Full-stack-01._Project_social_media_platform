@@ -18,6 +18,10 @@ define(function (require) {
             return loginService.getEmail()
         }
 
+        this.getAvatar = () => {
+            return loginService.getAvatar()
+        }
+
     }]);
 
 });

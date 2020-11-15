@@ -28,6 +28,12 @@ define(function (require) {
                 controllerUrl: './ngApp/login/LoginCtrl',
                 controller: 'LoginCtrl as loginCtrl'
             })
+            .state('root.profile', {
+                url:'/profile',
+                templateUrl: './ngApp/profile/profile.html',
+                controllerUrl: './ngApp/profile/ProfileCtrl',
+                controller: 'ProfileCtrl as profileCtrl'
+            })
 
     }]);
 });

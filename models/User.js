@@ -8,7 +8,14 @@ const userSchema = new Schema({
         type: String,
         default: 'NoOne'
     },
-    signature: String,
+    signature: {
+        type: String,
+        default: 'Nothing left behind'
+    },
+    avatar: {
+        type: String,
+        default: '/images/default_avatar.jpg'
+    },
     createdTime: {
         type: Date,
         default: Date.now()
